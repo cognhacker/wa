@@ -938,7 +938,7 @@
                         {
                          "name":"closeSound",
                          "type":"string",
-                         "value":"door_sound.mp3"
+                         "value":"https:\/\/github.com\/cognhacker\/wa\/raw\/master\/maps\/door_sound.mp3"
                         }, 
                         {
                          "name":"default ",
@@ -958,7 +958,7 @@
                         {
                          "name":"openSound",
                          "type":"string",
-                         "value":"door_sound.mp3"
+                         "value":"https:\/\/github.com\/cognhacker\/wa\/raw\/master\/maps\/door_sound.mp3"
                         }, 
                         {
                          "name":"persist",
