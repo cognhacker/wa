@@ -909,7 +909,7 @@
                 }, 
                 {
                  "class":"",
-                 "height":62,
+                 "height":90,
                  "id":18,
                  "name":"",
                  "rotation":0,
@@ -918,14 +918,14 @@
                      "bold":true,
                      "color":"#888888",
                      "fontfamily":"Amboss",
-                     "pixelsize":67,
+                     "pixelsize":96,
                      "text":"LAB",
                      "wrap":true
                     },
                  "visible":true,
-                 "width":97,
-                 "x":1035,
-                 "y":1788
+                 "width":150,
+                 "x":980,
+                 "y":1785
                 }, 
                 {
                  "class":"",
