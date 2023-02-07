@@ -305,6 +305,12 @@
                  "id":66,
                  "name":"heuzef00",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/files.heuzef.com\/s\/EXG7BkWCETwb7fy"
+                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":64,
