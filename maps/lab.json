@@ -632,7 +632,7 @@
                 {
                  "name":"openWebsite",
                  "type":"string",
-                 "value":"https:\/\/cognhacker.github.io\/wa\/info"
+                 "value":"https:\/\/cognhacker.github.io\/wa\/html\/info"
                 }],
          "type":"tilelayer",
          "visible":true,
