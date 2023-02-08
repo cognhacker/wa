@@ -149,6 +149,12 @@
                  "id":63,
                  "name":"heuzef02",
                  "opacity":1,
+                 "properties":[
+                        {
+                         "name":"openWebsite",
+                         "type":"string",
+                         "value":"https:\/\/sites.google.com\/view\/heuzefcognhackerlab\/graveuse-laser"
+                        }],
                  "type":"tilelayer",
                  "visible":true,
                  "width":64,
@@ -309,7 +315,7 @@
                         {
                          "name":"openWebsite",
                          "type":"string",
-                         "value":"https:\/\/files.heuzef.com\/s\/EXG7BkWCETwb7fy"
+                         "value":"https:\/\/sites.google.com\/view\/heuzefcognhackerlab\/accueil"
                         }],
                  "type":"tilelayer",
                  "visible":true,
