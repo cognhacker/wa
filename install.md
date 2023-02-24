@@ -115,34 +115,6 @@ services:
   redis:
     image: redis:6
     restart: unless-stopped
-
-  wordpress:
-    image: wordpress
-    restart: unless-stopped
-    ports:
-      - 8080:80
-    environment:
-      WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: cognhacker
-      WORDPRESS_DB_PASSWORD: **********************
-      WORDPRESS_DB_NAME: cognhacker
-    volumes:
-      - /var/www/html:/var/www/html
-
-  db:
-    image: mysql:5.7
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: cognhacker
-      MYSQL_USER: cognhacker
-      MYSQL_PASSWORD: **********************
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - db:/var/lib/mysql
-
-volumes:
-  wordpress:
-  db:
 ````
 
 **.env**
