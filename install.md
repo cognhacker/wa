@@ -117,8 +117,8 @@ services:
     restart: unless-stopped
 
   wordpress:
-    image: unless-stopped
-    restart: always
+    image: wordpress
+    restart: unless-stopped
     ports:
       - 8080:80
     environment:
