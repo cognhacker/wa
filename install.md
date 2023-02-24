@@ -139,6 +139,10 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
 ````
 
 **.env**
