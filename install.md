@@ -4,7 +4,7 @@
 
 - Déploiement Ubuntu 22.04.1 LTS avec le package OpenSSH + Docker
 - Changement des MDP root et cognhacker
-- Installation d’utilitaires : ``apt install -y curl wget git screen htop vim nano sudo tree iperf3 unzip sshfs nmap apache2``
+- Installation d’utilitaires : ``apt install -y curl wget git screen htop vim nano sudo tree iperf3 unzip sshfs nmap apache2 network-manager net-tools``
 - MAJ et redémarrage
 - Mise en service d’apache et clone du site
 - ``echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf``
@@ -17,20 +17,8 @@ Quelques tutos :
 * https://wiki.techinc.nl/Work-Adventure/install
 * https://github.com/thecodingmachine/workadventure/tree/master/contrib/docker
 
-Création de l’arborescence :
-````
-/root/
-├── workad
-│   ├── docker-compose.yml
-│   └── .env
-/srv/
-└── www
-    ├── .git
-    ├── index.html
-    └── README.md
-````
+Création du **docker-compose.yml**
 
-**docker-compose.yml**
 ````
 version: "3.3"
 services:
@@ -127,6 +115,30 @@ services:
   redis:
     image: redis:6
     restart: unless-stopped
+
+  wordpress:
+    image: unless-stopped
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: cognhacker
+      WORDPRESS_DB_PASSWORD: **********************
+      WORDPRESS_DB_NAME: cognhacker
+    volumes:
+      - /var/www/html:/var/www/html
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: cognhacker
+      MYSQL_USER: cognhacker
+      MYSQL_PASSWORD: **********************
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
 ````
 
 **.env**
@@ -168,4 +180,10 @@ ENABLE_CHAT=false
 SECRET_KEY="**********************"
 ADMIN_API_TOKEN="**********************"
 ADMIN_API_URL=
+````
+
+Lancement :
+
+````
+sudo docker-compose -f /home/cognhacker/docker-compose.yml up -d --build
 ````
