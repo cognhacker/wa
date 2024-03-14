@@ -4,10 +4,9 @@
 
 - Déploiement Ubuntu 22.04.1 LTS avec le package OpenSSH + Docker
 - Changement des MDP root et cognhacker
-- Installation d’utilitaires : ``apt install -y curl wget git screen htop vim nano sudo tree iperf3 unzip sshfs nmap apache2 network-manager net-tools``
+- Installation d’utilitaires : ``apt install -y curl wget git tmux htop vim nano sudo tree iperf3 unzip sshfs nmap apache2 network-manager net-tools``
 - MAJ et redémarrage
-- Mise en service d’apache et clone du site
-- ``echo "vm.overcommit_memory = 1" >> /etc/sysctl.conf``
+- Mise en service d’apache et clone du site : `git clone https://github.com/cognhacker/www.git`
 
 ## Installation de WorkAdventure
 
@@ -19,7 +18,9 @@ Quelques tutos :
 
 Création du **docker-compose.yml**
 
-````
+
+
+```yaml
 version: "3.3"
 services:
   reverse-proxy:
@@ -77,7 +78,7 @@ services:
       JITSI_URL: ${JITSI_URL}
       JITSI_ISS: ${JITSI_ISS}
       FRONT_URL : ${FRONT_URL}
-	  START_ROOM_URL: "${START_ROOM_URL}"
+      START_ROOM_URL: "${START_ROOM_URL}"
     labels:
       - "traefik.http.middlewares.strip-pusher-prefix.stripprefix.prefixes=/pusher"
       - "traefik.http.routers.pusher.rule=PathPrefix(`/pusher`)"
@@ -115,10 +116,11 @@ services:
   redis:
     image: redis:6
     restart: unless-stopped
-````
+```
 
 **.env**
-````
+
+```bash
 # The base domain
 DOMAIN=lab.cognhacker.net
 
@@ -156,10 +158,10 @@ ENABLE_CHAT=false
 SECRET_KEY="**********************"
 ADMIN_API_TOKEN="**********************"
 ADMIN_API_URL=
-````
+```
 
 Lancement :
 
-````
-sudo docker-compose -f /home/cognhacker/docker-compose.yml up -d --build
-````
+```bash
+docker-compose -f /root/docker-compose.yml up -d --build
+```
