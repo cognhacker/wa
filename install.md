@@ -2,11 +2,13 @@
 
 ## Notes d’installation de la VM
 
-- Déploiement Ubuntu 22.04.1 LTS avec le package OpenSSH + Docker
+- Déploiement Ubuntu 22.04.1 LTS avec le package OpenSSH
 - Changement des MDP root et cognhacker
 - Installation d’utilitaires : ``apt install -y curl wget git tmux htop vim nano sudo tree iperf3 unzip sshfs nmap apache2 network-manager net-tools``
-- MAJ et redémarrage
 - Mise en service d’apache et clone du site : `git clone https://github.com/cognhacker/www.git`
+- Installation de Docker : https://docs.docker.com/engine/install/ubuntu
+  
+  
 
 ## Installation de WorkAdventure
 
@@ -17,8 +19,6 @@ Quelques tutos :
 * https://github.com/thecodingmachine/workadventure/tree/master/contrib/docker
 
 Création du **docker-compose.yml**
-
-
 
 ```yaml
 version: "3.3"
